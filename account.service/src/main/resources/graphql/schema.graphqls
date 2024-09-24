@@ -1,0 +1,39 @@
+type Query {
+    accounts: [Account]
+    accountById(id: ID!): Account
+}
+
+type Account {
+    id: ID!
+    userId: String
+    name: String
+    surname: String
+    birth: String
+    type: AccountType
+    musicGenre: [MusicGenre]
+    gender: Gender
+    friends: [Account]
+    work: Account
+    bornIn: Country
+    liveIn: Country
+}
+
+type MusicGenre {
+    id: ID!
+    name: String
+}
+
+type Gender {
+    id: ID!
+    name: String
+}
+
+type Country {
+    id: ID!
+    name: String
+}
+
+enum AccountType {
+    People
+    Firm
+}
